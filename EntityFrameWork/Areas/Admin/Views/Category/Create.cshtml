@@ -1,0 +1,40 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="container my-5 ">
+
+    @*<span class="text-danger">@ViewBag.Error</span>*@
+    <form class="forms-sampl" asp-action="Create" method="post">
+       @* <input type="text" class="form-control" id="customFile" asp-for="Name" />*@
+
+          <textarea class="form-control" id="category-text" rows="3" asp-for="Name"></textarea>
+
+        <span class="text-danger" asp-validation-for="Name"></span>
+
+      <div class="buttons my-3">
+
+     <button type="submit" class="btn btn-primary mr-2">Submit</button>
+     <a class="btn btn-light" asp-action="Index">Cancel</a>
+      </div>
+
+    </form>
+</div>
+
+
+@section Scripts{
+
+    <partial name= "_ValidationScriptsPartial"/>
+
+    <script src="~/ckeditor/ckeditor.js"></script>
+
+    <script>
+        CKEDITOR.replace("category-text")
+    </script>
+
+@*
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>*@
+}

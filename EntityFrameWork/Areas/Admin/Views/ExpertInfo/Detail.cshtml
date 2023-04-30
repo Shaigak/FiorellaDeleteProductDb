@@ -1,0 +1,22 @@
+﻿@model Workers
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="container my-5 ">
+
+    @*<span class="text-danger">@ViewBag.Error</span>*@
+
+        <span>Name</span>
+        <input type="text" class="form-control" id="customFile" asp-for="Name" disabled="disabled" />
+
+        <span>Position</span>
+        <input type="text" class="form-control" id="customFile" asp-for="Position" disabled="disabled" />
+
+        <span>Image</span>
+        <input type="text" class="form-control" id="customFile" asp-for="Image" disabled="disabled" />
+        <a class="btn btn-primary" asp-action="Index">Cancel</a>
+
+
+</div>
+

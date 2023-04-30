@@ -1,0 +1,55 @@
+﻿@model Workers
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+
+<div class="container my-5 ">
+
+    @*<span class="text-danger">@ViewBag.Error</span>*@
+
+        
+      <form class="forms-sample" asp-action="Create" method="post" enctype="multipart/form-data">
+
+
+          
+          <span>Image</span>
+        <label class="form-label" for="customFile"></label>
+        <input  class="form-control" id="customFile" asp-for="Photo" />
+        <span class="text-danger"  asp-validation-for="Photo"></span>
+        
+       
+      
+        <span>Name</span>
+        <textarea class="form-control" id="category-text" rows="3" asp-for="Name"></textarea>
+        
+        <span class="text-danger" asp-validation-for="Name"></span>
+
+        <span>Position</span>
+        <textarea class="form-control" id="category-area" rows="3" asp-for="Position"></textarea>
+
+        <span class="text-danger" asp-validation-for="Position"></span>
+      
+        <div class="buttons my-3">
+
+     <button type="submit" class="btn btn-primary mr-2">Submit</button>
+     <a class="btn btn-light" asp-action="Index">Cancel</a>
+      </div>
+
+    </form>
+
+
+    @section Scripts{
+          <script src="~/ckeditor/ckeditor.js"></script>
+
+    <script>
+        CKEDITOR.replace("category-text")
+         CKEDITOR.replace("category-area")
+        
+    </script>
+    }
+
+
+ </div>

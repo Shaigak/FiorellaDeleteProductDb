@@ -1,0 +1,22 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Detail</h1>
+
+<div class="container my-5 ">
+
+    @*<span class="text-danger">@ViewBag.Error</span>*@
+
+          <span>Description </span>
+        <input type="text" class="form-control" id="customFile" asp-for="Description" disabled="disabled" />
+        <span>Date </span>
+        <input type="text" class="form-control" id="customFile" asp-for="Date" disabled="disabled" />
+
+        <span>Image </span>
+         <input type="text" class="form-control" id="customFile" asp-for="Image" disabled="disabled" />
+        <a class="btn btn-light" asp-action="Index">Cancel</a>
+
+
+</div>

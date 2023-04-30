@@ -1,0 +1,74 @@
+﻿@model IEnumerable<SliderInfo>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+               <div class="container">
+    <h1>Slider</h1>
+                      <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            Title
+                          </th>
+
+                          <th>
+                          Description 
+                          </th>
+
+                          
+                          <th>
+                           Logo
+                          </th>
+
+
+                           <th>
+                           Operations
+                          </th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                       <a class="btn btn-outline-info" asp-action="Create" style="float:right;">Create </a>
+                        @foreach (var item in Model)
+                        {
+                             <tr>
+                          <td class="py-1">
+                            @Html.Raw(item.Title)
+                          </td>
+
+                           <td class="py-1">
+                           @Html.Raw(item.Description)  
+                          </td>
+
+                           <td class="py-1">
+                             <img src="~/img/@item.SignatureImage" style="width:70px ; height:70px;" />
+                          </td>
+                         
+                         
+                          <td>
+
+                              <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@item.Id">Info</a>
+                              <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+
+                              <form style="display:inline-block;" id="category-delete-form"asp-action="Delete"  asp-route-id="@item.Id">
+
+                                <button type="submit" class="btn btn-outline-danger deleteButton ">Delete</button>
+
+                              </form>
+         
+                          </td>
+
+                        </tr>
+                        }
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+  
+
+
+

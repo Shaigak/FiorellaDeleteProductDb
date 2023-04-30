@@ -1,0 +1,32 @@
+﻿@model Slider
+
+
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container my-5">
+    <h1>Slider </h1>
+
+    <div class="slider-content">
+
+     <img src="~/img/@Model.Image"/>
+
+    </div>
+
+
+    <form class="form-sample" asp-action="Edit" asp-route-id="@Model.Id" method="post" enctype="multipart/form-data" >
+     @*  <label for="formfile" class="form-label">choose</label>*@
+     <input  class="form-control" id="customFile" asp-for="Photo"  />
+
+     <div class="buttons my-3">
+     <button type="submit" class="btn btn-primary mr-2">Submit</button>
+     <a class="btn btn-light" asp-action="Index">Cancel</a>
+     </div>
+
+    </form>
+
+    
+
+</div>

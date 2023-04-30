@@ -1,0 +1,25 @@
+﻿
+
+@model List<SliderInfo>
+
+
+
+            
+
+            @foreach (var item in Model)
+            {
+                <div class="container context pl-lg-5 ml-lg-3">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="text">
+                            @Html.Raw(item.Title)
+                            <p class="text-black-50 d-none d-sm-block">@item.Description</p>
+                        </div>
+                        <div class="img">
+                            <img src="~/img/@item.SignatureImage" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+ 

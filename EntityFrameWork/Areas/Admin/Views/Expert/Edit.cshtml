@@ -1,0 +1,33 @@
+﻿@model Flower
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container my-5 ">
+
+    @*<span class="text-danger">@ViewBag.Error</span>*@
+
+    <form class="forms-sampl" asp-action="Edit" method="post" >
+
+        <span>Name</span>
+        <input type="text" class="form-control" id="customFile" asp-for="Name"  />
+
+        <span class="text-danger" asp-validation-for="Name"></span>
+
+        <span>Description</span>
+         <input type="text" class="form-control" id="customFile" asp-for="Description" />
+
+        <span class="text-danger" asp-validation-for="Description"></span>
+
+      <div class="buttons my-3">
+
+     <button type="submit" class="btn btn-primary mr-2">Submit</button>
+     <a class="btn btn-light" asp-action="Index">Cancel</a>
+      </div>
+
+    </form>
+
+
+</div>
+
+

@@ -1,0 +1,75 @@
+﻿
+@model Product
+
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<div class="container my-5 ">
+
+  
+
+       <div class="form-group">
+              <span>Name</span>
+        <label class="form-label" for="customFile"></label>
+       
+        <textarea class="form-control" disabled id="customFile" asp-for="Name"></textarea>
+        <span class="text-danger" asp-validation-for="Name"></span>
+       </div>
+       
+    
+         <div class="form-group">
+          <span>Description</span>
+           <input class="form-control" disabled id="description-text" value="@ViewBag.desc"/>
+           <span class="text-danger" asp-validation-for="Description"></span>
+       </div>
+      
+       <div class="form-group">
+        <span>Price</span>
+       <input type="text" class="form-control" disabled id="customFile" asp-for="Price" />
+       <span class="text-danger" asp-validation-for="Price"></span>
+       </div>
+      
+       <div class="form-group">
+        <span>Count</span>
+       <input class="form-control" disabled id="customFile" asp-for="Count" />
+       <span class="text-danger" asp-validation-for="Count"></span>
+       </div>
+
+       <div class="form-group">
+        <span>Category</span>
+        <select  class="form-control" id="customFile" disabled asp-for="CategoryId" asp-items="@ViewBag.Categories"></select>
+       </div>
+
+       <div class="form-group">
+      
+              @foreach (var item in Model.Images)
+              {
+                   <img src="~/img/@item.Image" style="width:150px; height:150px;" />
+              }   
+       </div>
+
+       <div class="form-group">
+           <h1>Are you want to delete product?</h1>
+       </div>
+       
+    <form class="forms-sample" asp-action="Delete" method="post">
+
+       <div class="form-group">
+        <div class="buttons my-3">
+       <button type="submit" class="btn btn-primary mr-2">Submit</button>
+       <a class="btn btn-light" asp-action="Index">Cancel</a>
+       </div>
+
+       </div>
+ 
+   </form>
+
+  
+
+</div>
+
+
+

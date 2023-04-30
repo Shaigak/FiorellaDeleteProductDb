@@ -1,0 +1,22 @@
+﻿@model SliderInfo
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="container my-5 ">
+
+    @*<span class="text-danger">@ViewBag.Error</span>*@
+
+        <span>Title</span>
+        <input type="text" class="form-control" id="customFile" asp-for="Title" disabled="disabled" />
+
+        <span>Description</span>
+        <input type="text" class="form-control" id="customFile" asp-for="Description" disabled="disabled" />
+
+        <span>Logo</span>
+        <input type="text" class="form-control" id="customFile" asp-for="SignatureImage" disabled="disabled" />
+        <a class="btn btn-primary" asp-action="Index">Cancel</a>
+
+
+</div>
+

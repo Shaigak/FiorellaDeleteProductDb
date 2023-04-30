@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Flower>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="container">
+    <h1>Flower</h1>
+                      <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            Name
+                          </th>
+                          <th>
+                            Description
+                          </th>
+                          <th>
+                           Operations
+                          </th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                       <a class="btn btn-outline-info" asp-action="Create" style="float:right;">Create </a>
+                        @foreach (var item in Model)
+                        {
+                             <tr>
+                          <td class="py-1">
+                            <span>@item.Name</span>
+                          </td>
+
+                           <td class="py-1">
+                            <span>@item.Description</span>
+                          </td>
+                          
+                          <td>
+
+                              <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@item.Id">Info</a>
+                              <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                              <form style="display:inline-block;" asp-action="Delete" method="post" asp-route-id="@item.Id">
+
+                                  <button  type="submit" class="btn btn-outline-danger deleteButton">Delete</button>
+
+                              </form>
+ 
+                          </td>
+
+                        </tr>
+                        }
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+</div>
+
+

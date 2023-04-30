@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Blog>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<div class="container">
+    <h1>Slider</h1>
+                      <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            Image
+                          </th>
+                          <th>
+                            Description
+                          </th>
+                          <th>
+                           Date
+                          </th>
+                           <th>
+                           Date
+                          </th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                       <a class="btn btn-outline-info" asp-action="Create" style="float:right;">Create </a>
+                        @foreach (var item in Model)
+                        {
+                             <tr>
+                          <td class="py-1">
+                            <img src="~/img/@item.Image" style="width:70px ; height:70px;" />
+                          </td>
+                           <td class="py-1">
+                            <span>@item.Description</span>
+                          </td>
+
+                          <td class="py-1">
+                            <span>@item.Date</span>
+                          </td>
+                          
+                          <td>
+
+                              <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@item.Id">Info</a>
+                              <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+
+                              <form style="display:inline-block;" asp-action="Delete" asp-route-id="@item.Id" method="post">
+                                  <button type="submit" class="btn btn-outline-danger">Delete</button>
+                              </form>
+                              
+ 
+                          </td>
+
+                        </tr>
+                        }
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+</div>

@@ -1,0 +1,11 @@
+﻿@model  List<Slider>
+
+
+
+<div class="owl-carousel slider">
+
+                @foreach (var item in Model)
+                {
+                  <div> <img src="~/img/@item.Image" alt=""> </div>
+                }      
+ </div>

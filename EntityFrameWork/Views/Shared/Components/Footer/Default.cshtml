@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Footer> 
+
+
+
+
+    @foreach (var item in Model)
+    {
+       <div class=" col-lg-4 text-center text-lg-left">
+               <p class="text-black-50">Powered by <a class="author text-muted"
+                            href="https://www.bakhtiyar.az">@item.Owner</a> 2020</p>
+                </div>
+                <div class=" col-lg-4 text-center">
+                    @item.Image
+                </div> 
+    }
+
